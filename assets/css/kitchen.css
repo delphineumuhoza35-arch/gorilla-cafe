@@ -1,0 +1,78 @@
+﻿/* Kitchen dashboard styles - separate from the customer-facing sheet
+   since this page uses a grid layout meant for a tablet/desktop screen. */
+
+.kitchen-body { padding-bottom: 20px; }
+.kitchen-body .site-header .subtitle a { color: #fff; text-decoration: underline; }
+
+.kitchen-toolbar {
+    max-width: 1100px;
+    margin: 16px auto 0;
+    padding: 0 16px;
+    font-size: 0.9rem;
+}
+
+.orders-wrap {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 16px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 14px;
+}
+
+.loading-text { text-align: center; color: var(--muted); padding: 40px; grid-column: 1 / -1; }
+
+.order-card {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-left: 6px solid var(--border);
+    border-radius: var(--radius);
+    padding: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.status-border-received  { border-left-color: #9a7b1f; }
+.status-border-preparing { border-left-color: #c76b1f; }
+.status-border-ready       { border-left-color: #2f6b3a; }
+.status-border-served      { border-left-color: #888; }
+
+.order-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.order-table { font-weight: 700; font-size: 1.05rem; }
+
+.status-pill {
+    font-size: 0.75rem;
+    color: #fff;
+    padding: 4px 10px;
+    border-radius: 12px;
+}
+.status-pill.status-received  { background: #9a7b1f; }
+.status-pill.status-preparing { background: #c76b1f; }
+.status-pill.status-ready       { background: #2f6b3a; }
+.status-pill.status-served      { background: #888; }
+.status-pill.status-cancelled   { background: #b3261e; }
+
+.order-items-list { margin: 0; padding-left: 18px; font-size: 0.9rem; }
+.order-items-list li { margin-bottom: 2px; }
+
+.order-card-footer {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    color: var(--muted);
+}
+
+.btn-advance {
+    background: var(--green);
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+}
+.btn-advance:disabled { opacity: 0.6; }

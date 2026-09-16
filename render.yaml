@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: gorilla-cafe
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: DB_HOST
+        sync: false
+      - key: DB_USER
+        sync: false
+      - key: DB_PASS
+        sync: false
+      - key: DB_NAME
+        value: gorilla_cafe
+    healthCheckPath: /
+    autoDeploy: true
