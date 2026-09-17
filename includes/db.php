@@ -17,6 +17,7 @@
 
 // Use Render environment variables in production, fall back to local XAMPP defaults:
 define('DB_HOST', getenv('DB_HOST') ?: 'localhost');
+define('DB_PORT', getenv('DB_PORT') ?: '3306');
 define('DB_USER', getenv('DB_USER') ?: 'root');
 define('DB_PASS', getenv('DB_PASS') ?: '');
 define('DB_NAME', getenv('DB_NAME') ?: 'gorilla_cafe');
@@ -29,7 +30,7 @@ mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 date_default_timezone_set('Africa/Kigali');
 
 try {
-    $conn = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+    $conn = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME, (int) DB_PORT);
     $conn->set_charset('utf8mb4');
     $conn->query("SET time_zone = '+02:00'");
 } catch (mysqli_sql_exception $e) {
