@@ -19,5 +19,4 @@ RewriteRule ^(.*)$ index.php [QSA,L]
     </FilesMatch>
 </IfModule>
 
-ServerSignature Off
-TraceEnable Off
+
