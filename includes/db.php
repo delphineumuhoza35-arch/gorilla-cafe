@@ -36,5 +36,5 @@ try {
 } catch (mysqli_sql_exception $e) {
     // Fail loudly but without leaking credentials to the browser.
     http_response_code(500);
-    die('Database connection failed. Please check includes/db.php settings. Debug: ' . $e->getMessage());
+    die('Database connection failed. Please check includes/db.php settings.');
 }
