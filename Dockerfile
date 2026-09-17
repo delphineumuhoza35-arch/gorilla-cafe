@@ -14,6 +14,9 @@ COPY . /var/www/html/
 
 RUN chown -R www-data:www-data /var/www/html \
     && find /var/www/html -type d -exec chmod 755 {} \; \
-    && find /var/www/html -type f -exec chmod 644 {} \;
+    && find /var/www/html -type f -exec chmod 644 {} \; \
+    && chmod +x /var/www/html/docker-entrypoint.sh
 
-EXPOSE 80
+EXPOSE 10000
+
+ENTRYPOINT ["/var/www/html/docker-entrypoint.sh"]
