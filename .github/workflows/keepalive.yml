@@ -1,0 +1,14 @@
+name: Keep Alive
+
+on:
+  schedule:
+    - cron: "*/5 * * * *"
+  workflow_dispatch:
+
+jobs:
+  heartbeat:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping site
+        run: |
+          curl -sf --max-time 30 https://gorilla-cafe.onrender.com/heartbeat.php && echo "OK"
